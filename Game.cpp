@@ -105,13 +105,6 @@ void Game::shuffle() {
         deck[randNum4] = deck[randNum5];
         deck[randNum5] = tempCard;
     }
-    
-    /*
-    //FOR TESTING
-    for (int i = 0; i < 52; ++i) {
-        deck[i] = testDeck[i];
-    }
-    */
 }
 
 bool Game::end_of_deck() {
@@ -166,72 +159,6 @@ bool Game::ask_another_round() {
         return ask_another_round();
     }
 }
-
-/*
-void Game::distribute_pot() {
-    int extra = chipsInPot / numPlayers;
-    int playersNotInGame = 0;
-    int playersInGame;
-    int luckyPlayers;
-    
-    for (int i = 0; i < numPlayers; ++i) {
-        if (!player[i].inTheGame) {
-            ++playersNotInGame;
-        }
-    }
-    
-    playersInGame = numPlayers - playersNotInGame;
-    luckyPlayers = chipsInPot % playersInGame;
-    
-    cout << "\nThere " << pluralize("is", "are", chipsInPot) << " "
-         << chipsInPot << " " << pluralize("chip", "chips", chipsInPot)
-         << " leftover in the pot\n";
-    
-    if (chipsInPot == 0) {
-        return;
-    }
-    
-    if (luckyPlayers == 0) {
-        cout << "Everyone gets " << extra << " more "
-             << pluralize("chip", "chips", extra) << ".\n";
-        
-        for (int i = 0; i < numPlayers; ++i) {
-            if (!player[i].inTheGame) {
-                continue;
-            }
-            
-            take_from_pot(player[i], extra);
-        }
-    }
-    
-    else {
-        int j = 0;
-        int n = luckyPlayers;
-        while (j < n) {
-            // If player isn't in the game, go to next player, but ensure that n
-            // players still get the remainder chip
-            if (!player[j].inTheGame) {
-                ++n;
-                continue;
-            }
-            
-            cout << player[j].name << " gets " << extra + 1 << " more chips.\n";
-            take_from_pot(player[j], extra + 1);
-        }
-        
-        for (int i = n; i < numPlayers; ++i) {
-            if (!player[i].inTheGame) {
-                continue;
-            }
-            
-            cout << player[i].name << " gets " << extra << " more "
-                 << pluralize("chip", "chips", extra) << ".\n";
-            
-            take_from_pot(player[i], extra);
-        }
-    }
-}
-*/
 
 void Game::wins_and_losses() {
     for (int i = 0; i < numPlayers; ++i) {
@@ -699,9 +626,8 @@ void Game::play() {
             cout << endl;
         }
         
-        //If not, distribute pot, print winnings/losses, end game
+        //If not, print winnings/losses, end game
         else {
-            //distribute_pot();
             wins_and_losses();
             gameEnded = true;
         }
