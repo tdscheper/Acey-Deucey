@@ -35,23 +35,16 @@ struct Game {
         "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace",
         "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"
     };
-    //For testing
-    string testDeck[NUM_CARDS] {
-        "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace",
-        "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace",
-        "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace",
-        "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"
-    };
     
     /**
-     * Requires: Nothing,
+     * Requires: Nothing.
      * Modifies: chipsInPot, cardsUsed.
      * Effects: Default constructor. Sets chipsInPot and cardsUsed to 0.
      */
     Game();
     
     /**
-     * Requires: Nothing,
+     * Requires: Nothing.
      * Modifies: cout.
      * Effects: Displays rules in a box.
      */
@@ -126,15 +119,6 @@ struct Game {
      *       returns true. If player enters no or n (any upper/lower combo), returns false.
      */
     bool ask_another_round();
-    
-    /**
-     * Requires: Nothing.
-     * Modifies: cout, chipsInPot, each player in the game.
-     * Effects: Evenly distributes chips in pot to the players. If it can't be evenly distributed, gives one extra to
-     *       the next player until the pot is empty, starting at the first player (player[0]). Players not in the
-     *       game do not receive any of the pot.
-     */
-    void distribute_pot();
     
     /**
      * Requires: Nothing.
