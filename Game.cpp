@@ -489,9 +489,13 @@ void Game::full_turn(Player &p) {
     
     execute_turn(p, firstCard, secondCard);
     
+    //Ensure player's card ranks are set to Ace being highest card after turn
+    for (int i = 0; i < NUM_RANKS; ++i) {
+        p.playerCardRanks[i] = highAceRanks[i];
+    }
+    
     //Take player out of game if they run out of chips
-    if (p.numChips <= 0) {
-        p.numChips = 0;
+    if (p.numChips == 0) {
         p.take_player_out();
     }
 }
