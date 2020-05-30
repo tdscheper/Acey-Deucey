@@ -22,6 +22,12 @@ using namespace std;
 const int MAX_PLAYERS = 50;
 const int NUM_CARDS = 52;
 const int NUM_RANKS = 13;
+const string lowAceRanks[NUM_RANKS] = {
+    "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"
+};
+const string highAceRanks[NUM_RANKS] = {
+    "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"
+};
 
 /**
  * Requires: Nothing.
