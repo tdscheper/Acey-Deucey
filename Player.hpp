@@ -24,12 +24,6 @@ struct Player {
     string playerCardRanks[NUM_RANKS] = {
         "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"
     };
-    string lowAceRanks[NUM_RANKS] = {
-        "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"
-    };
-    string highAceRanks[NUM_RANKS] = {
-        "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"
-    };
     
     /**
      * Requires: Nothing,
